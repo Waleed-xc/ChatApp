@@ -9,11 +9,16 @@ const User = require('./models/User');
 const Message = require('./models/Message');
 const ws = require('ws');
 const fs = require('fs');
-
 dotenv.config();
-mongoose.connect(process.env.MONGO_URL, (err) => {
-  if (err) throw err;
-});
+mongoose.connect(process.env.MONGO_URL)
+  .then(() => {
+    console.log('MongoDB connected');
+  })
+  .catch((err) => {
+    console.error('Error connecting to MongoDB:', err);
+  });
+
+
 const jwtSecret = process.env.JWT_SECRET;
 const bcryptSalt = bcrypt.genSaltSync(10);
 
@@ -25,6 +30,8 @@ app.use(cors({
   credentials: true,
   origin: process.env.CLIENT_URL,
 }));
+
+console.log('connected to' +  process.env.CLIENT_URL );
 
 async function getUserDataFromRequest(req) {
   return new Promise((resolve, reject) => {
@@ -41,9 +48,6 @@ async function getUserDataFromRequest(req) {
 
 }
 
-app.get('/test', (req,res) => {
-  res.json('test ok');
-});
 
 app.get('/messages/:userId', async (req,res) => {
   const {userId} = req.params;
