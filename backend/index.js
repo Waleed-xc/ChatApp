@@ -9,6 +9,7 @@ const User = require('./models/User');
 const Message = require('./models/Message');
 const ws = require('ws');
 const fs = require('fs');
+
 dotenv.config();
 mongoose.connect(process.env.MONGO_URL)
   .then(() => {
@@ -31,7 +32,7 @@ app.use(cors({
   origin: process.env.CLIENT_URL,
 }));
 
-console.log('connected to' +  process.env.CLIENT_URL );
+console.log('connected to  ' +  process.env.CLIENT_URL );
 
 async function getUserDataFromRequest(req) {
   return new Promise((resolve, reject) => {
@@ -117,7 +118,6 @@ app.post('/register', async (req,res) => {
 });
 
 const server = app.listen(4040);
-
 const wss = new ws.WebSocketServer({server});
 wss.on('connection', (connection, req) => {
 
