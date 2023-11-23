@@ -11,6 +11,18 @@ Chat Application Using MERN Stack
 5- the user can upload files in the chat and displays it
 
 
+<p align="center">
+
+<img src="https://cdn.simpleicons.org/react" alt="react" height="48" width="48">
+<img src="https://cdn.simpleicons.org/mongodb" alt="mongodb" height="48" width="48">
+<img src="https://cdn.simpleicons.org/html5" alt="html5" height="48" width="48">
+<img src="https://cdn.simpleicons.org/css3" alt="css3" height="48" width="48">
+<img src="https://cdn.simpleicons.org/express" alt="express" height="48" width="48">
+<img src="https://cdn.simpleicons.org/nodedotjs" alt="nodejs" height="48" width="48">
+<img src="https://cdn.simpleicons.org/tailwindcss" alt="tailwind" height="48" width="48">
+</p>
+
+
 # Screenshots
 ![Screenshot (41)](https://github.com/Waleed-xc/ChatApp/assets/102128756/0638878a-395c-4a92-9062-5589d3cf6028)
 
